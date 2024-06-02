@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.MainActivity">
+    <!-- tools:context 用来指定布局文件关联的Activity或Fragment，从而让布局编辑器可以提供更好的预览效果和工具支-->
+
+    <!-- android:elevation，用以在xml定义View的深度(高度)，也即z方向的值   -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_home_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="@dimen/dp_10"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="4"
+        tools:itemCount="4"
+        tools:listitem="@layout/bottom_navigation_item" />
+
+</LinearLayout>
