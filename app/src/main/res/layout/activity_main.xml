@@ -8,6 +8,13 @@
     tools:context=".ui.activity.MainActivity">
     <!-- tools:context 用来指定布局文件关联的Activity或Fragment，从而让布局编辑器可以提供更好的预览效果和工具支-->
 
+    <com.runoob.froggy.ui.view.NoScrollViewPager
+        android:id="@+id/vp_home_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1" />
+    <!-- layout_weight: 权重值 意指分配导航栏的剩余空间 仅可用于LinearLayout  -->
+
     <!-- android:elevation，用以在xml定义View的深度(高度)，也即z方向的值   -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_home_navigation"
