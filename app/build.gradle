@@ -16,6 +16,13 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    //自定义打包名称
+    android.applicationVariants.all { variant ->
+            variant.outputs.all {
+                outputFileName = "froggy_${buildType.name}_V${versionName}.apk"
+            }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
