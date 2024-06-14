@@ -1,5 +1,10 @@
 pluginManagement {
     repositories {
+        // 以下四行添加阿里云的仓库地址，方便国内开发者下载相关插件
+        maven { url 'https://maven.aliyun.com/repository/google'}
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin'}
+        maven { url 'https://maven.aliyun.com/repository/public'}
+        maven { url 'https://maven.aliyun.com/repository/central'}
         google {
             content {
                 includeGroupByRegex("com\\.android.*")
@@ -14,6 +19,11 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        // 以下四行添加阿里云的仓库地址，方便国内开发者下载相关插件
+        maven { url 'https://maven.aliyun.com/repository/google'}
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin'}
+        maven { url 'https://maven.aliyun.com/repository/public'}
+        maven { url 'https://maven.aliyun.com/repository/central'}
         google()
         mavenCentral()
     }
