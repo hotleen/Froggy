@@ -41,6 +41,16 @@ android {
 
 dependencies {
 
+
+    implementation files('libs/TitleBar-9.2.aar')
+    implementation files('libs/ToastUtils-9.5.aar')
+    implementation files('libs/EasyHttp-10.2.aar')
+
+    implementation 'com.squareup.okhttp3:okhttp:3.12.13'
+
+    // 沉浸式框架
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+
     implementation libs.appcompat
     implementation libs.material
     testImplementation libs.junit
