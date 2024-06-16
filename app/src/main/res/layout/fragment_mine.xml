@@ -1,9 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cardview_light_background"
-    tools:context=".ui.fragment.HomeFragment">
+    android:orientation="vertical"
+    tools:context="com.runoob.froggy.ui.fragment.MineFragment">
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <!-- todo: refactor to FGTitleBar   -->
+    <com.hjq.bar.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:leftIcon="@null"
+        app:title="@string/home_nav_me" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about_app"
+            android:textSize="@dimen/sp_18"
+            android:layout_marginTop="@dimen/dp_10"
+            android:id="@+id/about_area"
+            android:layout_marginStart="@dimen/dp_10"/>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>
