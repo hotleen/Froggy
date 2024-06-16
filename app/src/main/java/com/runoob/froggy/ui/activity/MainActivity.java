@@ -13,6 +13,7 @@ import com.runoob.froggy.base.BaseFragment;
 import com.runoob.froggy.base.FragmentPagerAdapter;
 import com.runoob.froggy.ui.adapter.NavigationAdapter;
 import com.runoob.froggy.ui.fragment.HomeFragment;
+import com.runoob.froggy.ui.fragment.MineFragment;
 
 public class MainActivity extends FroggyBaseActivity implements NavigationAdapter.OnNavigationListener {
 
@@ -47,7 +48,7 @@ public class MainActivity extends FroggyBaseActivity implements NavigationAdapte
         mPagerAdapter.addFragment(HomeFragment.newInstance());
         mPagerAdapter.addFragment(HomeFragment.newInstance());
         mPagerAdapter.addFragment(HomeFragment.newInstance());
-        mPagerAdapter.addFragment(HomeFragment.newInstance());
+        mPagerAdapter.addFragment(MineFragment.newInstance());
         mViewPager.setAdapter(mPagerAdapter);
 
         onNewIntent(getIntent());
@@ -114,6 +115,7 @@ public class MainActivity extends FroggyBaseActivity implements NavigationAdapte
             case 1:
             case 2:
             case 3:
+                mViewPager.setCurrentItem(position);
                 return true;
             default:
                 return false;

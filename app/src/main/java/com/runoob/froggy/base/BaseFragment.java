@@ -121,7 +121,6 @@ public abstract class BaseFragment<A extends FroggyBaseActivity> extends Fragmen
         return mActivity != null ? mActivity.getApplication() : null;
     }
 
-    protected abstract int getLayoutId();
 
     /**
      * 初始化控件
@@ -133,6 +132,7 @@ public abstract class BaseFragment<A extends FroggyBaseActivity> extends Fragmen
      */
     protected abstract void initData();
 
+    protected abstract int getLayoutId();
     /**
      * 根据资源 id 获取一个 View 对象
      */
