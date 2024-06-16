@@ -13,9 +13,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Lifecycle;
 
+import com.runoob.base.activity.FroggyBaseActivity;
+
 import java.util.List;
 
-public abstract class BaseFragment<A extends BaseActivity> extends Fragment {
+public abstract class BaseFragment<A extends FroggyBaseActivity> extends Fragment {
 
     private A mActivity; //activity对象
 

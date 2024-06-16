@@ -7,14 +7,14 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import com.runoob.base.activity.FroggyBaseActivity;
 import com.runoob.froggy.R;
-import com.runoob.froggy.base.BaseActivity;
 import com.runoob.froggy.base.BaseFragment;
 import com.runoob.froggy.base.FragmentPagerAdapter;
 import com.runoob.froggy.ui.adapter.NavigationAdapter;
 import com.runoob.froggy.ui.fragment.HomeFragment;
 
-public class MainActivity extends BaseActivity implements NavigationAdapter.OnNavigationListener {
+public class MainActivity extends FroggyBaseActivity implements NavigationAdapter.OnNavigationListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
     // 导航tab
@@ -51,6 +51,11 @@ public class MainActivity extends BaseActivity implements NavigationAdapter.OnNa
         mViewPager.setAdapter(mPagerAdapter);
 
         onNewIntent(getIntent());
+    }
+
+    @Override
+    protected void initAction() {
+
     }
 
 
