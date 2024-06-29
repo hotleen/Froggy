@@ -1,13 +1,25 @@
 package com.runoob.base.activity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.gyf.immersionbar.ImmersionBar;
+import com.hjq.bar.TitleBar;
+import com.runoob.base.R;
+import com.runoob.base.action.TitleBarAction;
 
-public abstract class FroggyBaseActivity extends AppCompatActivity {
+public abstract class FroggyBaseActivity extends AppCompatActivity implements TitleBarAction {
+
+    private TitleBar mTitleBar; // 标题栏对象
+
+    private ImmersionBar mImmersionBar; // 沉浸式配置
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,7 +44,12 @@ public abstract class FroggyBaseActivity extends AppCompatActivity {
         }
 
         if (isStatusBarEnabled()) {
-            ImmersionBar.with(this).init();
+            getStatusBarConfig().init();
+
+            // 设置标题栏沉浸
+            if (getTitleBar() != null) {
+                ImmersionBar.setTitleBar(this, getTitleBar());
+            }
         }
     }
 
@@ -62,5 +79,75 @@ public abstract class FroggyBaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+    }
+
+    /**
+     * 设置标题栏的标题
+     */
+    @Override
+    public void setTitle(@StringRes int id) {
+        setTitle(getString(id));
+    }
+
+    /**
+     * 设置标题栏的标题
+     */
+    @Override
+    public void setTitle(CharSequence title) {
+        super.setTitle(title);
+        if (getTitleBar() != null) {
+            getTitleBar().setTitle(title);
+        }
+    }
+
+    public ViewGroup getContentView() {
+        return findViewById(Window.ID_ANDROID_CONTENT);
+    }
+
+    @Override
+    @Nullable
+    public TitleBar getTitleBar() {
+        if (mTitleBar == null) {
+            mTitleBar = obtainTitleBar(getContentView());
+        }
+        return mTitleBar;
+    }
+
+    @Override
+    public void onLeftClick(View view) {
+        onBackPressed();
+    }
+
+
+    /**
+     * 状态栏字体深色模式
+     */
+    protected boolean isStatusBarDarkFont() {
+        return true;
+    }
+
+    /**
+     * 获取状态栏沉浸的配置对象
+     */
+    @NonNull
+    public ImmersionBar getStatusBarConfig() {
+        if (mImmersionBar == null) {
+            mImmersionBar = createStatusBarConfig();
+        }
+        return mImmersionBar;
+    }
+
+    /**
+     * 初始化沉浸式状态栏
+     */
+    @NonNull
+    protected ImmersionBar createStatusBarConfig() {
+        return ImmersionBar.with(this)
+                // 默认状态栏字体颜色为黑色
+                .statusBarDarkFont(isStatusBarDarkFont())
+                // 指定导航栏背景颜色
+                .navigationBarColor(R.color.white)
+                // 状态栏字体和导航栏内容自动变色，必须指定状态栏颜色和导航栏颜色才可以自动变色
+                .autoDarkModeEnable(true, 0.2f);
     }
 }
