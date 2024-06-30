@@ -28,6 +28,8 @@
             </intent-filter>
         </activity>
         <activity android:name="com.runoob.froggy.ui.activity.AboutAppActivity" />
+        <activity android:name="com.runoob.froggy.ui.activity.NoneFullActivity" android:theme="@style/ActivityNoneFullTheme"/>
+        <activity android:name="com.runoob.froggy.ui.activity.BizTransparentActivity" android:theme="@style/Theme.ActivityDialogStyle"/>
     </application>
 
 </manifest>

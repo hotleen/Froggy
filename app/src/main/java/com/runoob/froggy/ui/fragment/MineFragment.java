@@ -31,7 +31,6 @@ public class MineFragment<A extends FroggyBaseActivity> extends BaseFragment<A> 
                 //todo: 抽取activityAction
                 Intent intent = new Intent(getActivity(), AboutAppActivity.class);
                 startActivity(intent);
-                getActivity().overridePendingTransition(R.anim.activity_open, 0);
             }
         });
     }
