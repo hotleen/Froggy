@@ -5,4 +5,6 @@
     <string name="home_nav_message">消息</string>
     <string name="home_nav_me">我的</string>
     <string name="about_app">关于</string>
+    <string name="location_text">武汉</string>
+    <string name="search_hint">完善细节，追求完美</string>
 </resources>
