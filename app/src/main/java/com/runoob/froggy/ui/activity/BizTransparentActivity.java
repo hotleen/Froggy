@@ -2,8 +2,6 @@ package com.runoob.froggy.ui.activity;
 
 import android.os.Bundle;
 import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
@@ -12,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.runoob.froggy.R;
+import com.runoob.froggy.ui.listner.GestureListener;
 
 
 public class BizTransparentActivity extends AppCompatActivity {
@@ -43,26 +42,4 @@ public class BizTransparentActivity extends AppCompatActivity {
 
     }
 
-    private class GestureListener extends GestureDetector.SimpleOnGestureListener {
-        private static final int SWIPE_THRESHOLD = 100;
-        private static final int SWIPE_VELOCITY_THRESHOLD = 100;
-
-        @Override
-        public boolean onDown(MotionEvent e) {
-            return true;
-        }
-
-        @Override
-        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-            float diffY = e2.getY() - e1.getY();
-            if (Math.abs(diffY) > SWIPE_THRESHOLD && Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
-                if (diffY > 0) {
-                    // 下滑手势
-                    finish();
-                }
-                return true;
-            }
-            return false;
-        }
-    }
 }

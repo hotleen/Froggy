@@ -23,9 +23,16 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="go none full"
+        android:text="go biz page"
         android:clickable="true"
         android:onClick="goBizPage"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="show botton sheet dialog"
+        android:clickable="true"
+        android:onClick="showDialog"/>
 
 
 </LinearLayout>
