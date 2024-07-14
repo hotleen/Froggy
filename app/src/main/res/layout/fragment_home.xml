@@ -73,10 +73,17 @@
                 </LinearLayout>
 
             </androidx.appcompat.widget.Toolbar>
-
-
         </com.runoob.froggy.ui.view.XCollapsingToolbarLayout>
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_home_tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:itemCount="2"
+            tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/tab_item_design"
+            tools:spanCount="2" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
