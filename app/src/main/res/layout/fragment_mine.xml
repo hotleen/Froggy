@@ -18,14 +18,30 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/about_app"
-            android:textSize="@dimen/sp_18"
-            android:layout_marginTop="@dimen/dp_10"
-            android:id="@+id/about_area"
-            android:layout_marginStart="@dimen/dp_10"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/about_area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="@string/about_app"
+                android:textSize="@dimen/sp_18" />
+
+            <TextView
+                android:id="@+id/test_area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="测试"
+                android:textSize="@dimen/sp_18" />
+        </LinearLayout>
+
 
     </androidx.core.widget.NestedScrollView>
 

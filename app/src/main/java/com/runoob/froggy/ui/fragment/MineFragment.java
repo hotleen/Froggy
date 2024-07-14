@@ -9,6 +9,7 @@ import com.runoob.base.activity.FroggyBaseActivity;
 import com.runoob.froggy.R;
 import com.runoob.froggy.base.BaseFragment;
 import com.runoob.froggy.ui.activity.AboutAppActivity;
+import com.runoob.froggy.ui.activity.TestActivity;
 
 public class MineFragment<A extends FroggyBaseActivity> extends BaseFragment<A> {
 
@@ -30,6 +31,16 @@ public class MineFragment<A extends FroggyBaseActivity> extends BaseFragment<A> 
                 Log.i(TAG, "onClick: about");
                 //todo: 抽取activityAction
                 Intent intent = new Intent(getActivity(), AboutAppActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        TextView test = findViewById(R.id.test_area);
+        test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.i(TAG, "onClick: test");
+                Intent intent = new Intent(getActivity(), TestActivity.class);
                 startActivity(intent);
             }
         });

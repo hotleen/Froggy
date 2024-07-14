@@ -2,6 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,7 +23,7 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.Froggy"
-        tools:targetApi="31">
+        tools:targetApi="34">
 
         <!--
         A launchable activity must be exported as of Android 12, which also makes it available to other apps.-->
@@ -28,8 +40,13 @@
             </intent-filter>
         </activity>
         <activity android:name="com.runoob.froggy.ui.activity.AboutAppActivity" />
-        <activity android:name="com.runoob.froggy.ui.activity.NoneFullActivity" android:theme="@style/ActivityNoneFullTheme"/>
-        <activity android:name="com.runoob.froggy.ui.activity.BizTransparentActivity" android:theme="@style/Theme.ActivityDialogStyle"/>
+        <activity
+            android:name="com.runoob.froggy.ui.activity.NoneFullActivity"
+            android:theme="@style/ActivityNoneFullTheme" />
+        <activity
+            android:name="com.runoob.froggy.ui.activity.BizTransparentActivity"
+            android:theme="@style/Theme.ActivityDialogStyle" />
+        <activity android:name="com.runoob.froggy.ui.activity.TestActivity" />
     </application>
 
 </manifest>
